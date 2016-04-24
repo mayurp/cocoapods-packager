@@ -29,7 +29,7 @@ module Pod
     end
 
     it 'presents the help if both --exclude-deps and --dynamic are specified' do
-      command = Command.parse(%w{ package spec/fixtures/NikeKit.podspec --exclude-deps -`-dynamic })
+      command = Command.parse(%w{ package spec/fixtures/NikeKit.podspec --exclude-deps --dynamic })
       should.raise CLAide::Help do
         command.validate!
       end.message.should.match /--exclude-deps option can only be used for static libraries/
